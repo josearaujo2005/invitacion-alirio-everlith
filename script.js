@@ -10,7 +10,7 @@ const CONFIG = {
   whatsappConfirmaciones: "573001234567",
   // Pega aquí el enlace público cuando publiques (GitHub Pages, Netlify...).
   // Si lo dejas vacío se usa la dirección que esté abierta en el navegador.
-  urlPublica: ""
+  urlPublica: "https://github.com/josearaujo2005/invitacion-alirio-everlith.git"
 };
 
 const FECHA_LARGA = "viernes 13 de noviembre de 2026";
