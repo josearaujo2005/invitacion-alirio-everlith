@@ -7,7 +7,7 @@ const CONFIG = {
   direccion: "Dirección de ejemplo · Valledupar, Cesar",
   mapa: "https://maps.google.com/?q=Valledupar%2C+Cesar%2C+Colombia",
   // Cambia este número por el WhatsApp de quien recibirá las confirmaciones.
-  whatsappConfirmaciones: "573001234567",
+  whatsappConfirmaciones: "573226407225",
   // Pega aquí el enlace público cuando publiques (GitHub Pages, Netlify...).
   // Si lo dejas vacío se usa la dirección que esté abierta en el navegador.
   urlPublica: "https://github.com/josearaujo2005/invitacion-alirio-everlith.git"
