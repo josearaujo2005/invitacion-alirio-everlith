@@ -1,0 +1,145 @@
+ :root {
+  --ivory: #f6f0e7;
+  --paper: #fffdf8;
+  --champagne: #d6bd93;
+  --gold: #a98550;
+  --gold-dark: #87683d;
+  --ink: #4c4035;
+  --muted: #88796a;
+  --envelope: #dfcdb7;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100vh; overflow-x: hidden;
+  background: radial-gradient(ellipse at top, #fffaf2 0%, var(--ivory) 62%, #eee2d2 100%);
+  color: var(--ink); font-family: "Montserrat", sans-serif; font-weight: 300;
+}
+.ambient { position: fixed; width: 320px; height: 320px; border: 1px solid rgba(169,133,80,.12); border-radius: 50%; pointer-events: none; }
+.ambient-one { top: -170px; left: -140px; }
+.ambient-two { right: -180px; bottom: -180px; width: 440px; height: 440px; }
+.page { width: min(100% - 30px, 850px); margin: 0 auto; padding: 34px 0 28px; text-align: center; position: relative; z-index: 1; }
+.eyebrow { font-size: 10px; letter-spacing: .24em; line-height: 1.8; color: var(--gold-dark); font-weight: 600; }
+.top-eyebrow { margin: 0 0 12px; }
+.envelope-stage { height: 330px; display: grid; place-items: center; perspective: 1200px; }
+.envelope { width: min(330px, 84vw); height: 218px; position: relative; cursor: pointer; transform-style: preserve-3d; filter: drop-shadow(0 18px 22px rgba(87,64,42,.15)); outline: none; }
+.envelope:focus-visible { outline: 2px solid var(--gold); outline-offset: 8px; border-radius: 4px; }
+.envelope-back { position: absolute; inset: 0; background: #d8c2a7; border-radius: 3px; }
+.envelope-front { position: absolute; inset: 0; z-index: 4; background: linear-gradient(145deg, #e9d8c2, #d8c0a4); clip-path: polygon(0 0, 50% 57%, 100% 0, 100% 100%, 0 100%); }
+.envelope-flap { position: absolute; z-index: 5; top: 0; left: 0; width: 100%; height: 62%; background: #c8ac8a; clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top center; transition: transform 850ms cubic-bezier(.2,.75,.25,1), z-index 0ms 400ms; backface-visibility: visible; }
+.wax-seal { position: absolute; z-index: 6; top: 43%; left: 50%; transform: translate(-50%,-50%); width: 53px; height: 53px; border-radius: 50%; display: flex; align-items: center; justify-content: center; gap: 1px; background: radial-gradient(circle at 35% 30%, #b66c61, #843f3a 72%); border: 2px solid rgba(255,235,210,.35); color: #fff0d8; font: 600 13px "Cormorant Garamond", serif; box-shadow: 0 3px 8px #8c5d4c55; transition: opacity .3s, transform .3s; }
+.wax-seal span { font-style: italic; font-size: 12px; }
+.invitation-card { position: absolute; z-index: 2; left: 5%; top: 8px; width: 90%; height: 200px; background: var(--paper); padding: 18px 12px; overflow: hidden; transition: transform 1s cubic-bezier(.2,.7,.25,1), height 1s, box-shadow .6s; }
+.card-inner { opacity: 0; transition: opacity .55s ease .45s; }
+.card-inner .eyebrow { font-size: 8px; margin: 0; }
+.ornament { color: var(--gold); margin: 10px 0; font-size: 18px; }
+.names { font: 500 26px/1.04 "Cormorant Garamond", serif; margin: 8px 0 14px; color: #71563c; }
+.names span { display: block; }
+.names i { display: block; font-size: 22px; font-weight: 400; margin: 4px 0; }
+.invite-copy { font: 15px/1.6 "Cormorant Garamond", serif; max-width: 290px; margin: 12px auto 18px; }
+.thin-line { width: 60px; height: 1px; margin: 16px auto; background: var(--champagne); }
+.date { font-size: 10px; letter-spacing: .12em; line-height: 1.8; }
+.date strong { font: 600 20px "Cormorant Garamond", serif; padding: 0 4px; color: var(--gold-dark); }
+.time, .venue { font-size: 12px; margin: 8px 0; }
+.address { font-size: 10px; color: var(--muted); }
+.card-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 22px 0 12px; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 15px; text-decoration: none; font: 500 10px "Montserrat", sans-serif; letter-spacing: .04em; border-radius: 2px; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-gold { background: #e9dcc7; color: #604a32; border: 1px solid #d5bd96; }
+.button-dark { background: #735840; color: #fffaf2; border: 1px solid #735840; }
+.small-note { font: italic 14px "Cormorant Garamond", serif; color: var(--muted); margin-top: 18px; }
+.envelope.opened .envelope-flap { transform: rotateX(180deg); z-index: 1; }
+.envelope.opened .wax-seal { opacity: 0; transform: translate(-50%,-50%) scale(.65); pointer-events: none; }
+.envelope.opened .invitation-card { height: 520px; transform: translateY(-115px); z-index: 7; overflow: visible; box-shadow: 0 16px 35px #654b2b25; }
+.envelope.opened .card-inner { opacity: 1; }
+.envelope.opened .envelope-front { z-index: 4; }
+.envelope-stage.opened-stage { height: 470px; }
+.tap-hint { margin: 0 auto 28px; color: var(--muted); font-size: 11px; letter-spacing: .04em; }
+.hidden { display: none !important; }
+.below-content { animation: rise .8s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.section-heading { margin: 40px 0 22px; }
+h2 { font: 500 35px/1.1 "Cormorant Garamond", serif; color: #71563c; margin: 10px 0; }
+.section-heading > p:last-child, .rsvp-panel > p:not(.eyebrow) { color: var(--muted); font-size: 12px; line-height: 1.8; }
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 600px; margin: 0 auto 35px; }
+.photo { margin: 0; position: relative; min-height: 160px; background: #e9ddcc; overflow: hidden; border: 7px solid #fffaf3; box-shadow: 0 7px 20px #6b4c2b12; }
+.photo-large { grid-column: 1 / -1; height: 270px; }
+.photo:not(.photo-large) { height: 190px; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-placeholder { display: none; position: absolute; inset: 0; place-items: center; align-content: center; gap: 8px; color: #9c8060; font-family: "Cormorant Garamond", serif; }
+.photo-placeholder span { font-size: 30px; }
+.photo-placeholder small { font: 10px "Montserrat", sans-serif; }
+.countdown-panel { background: rgba(255,253,248,.68); padding: 25px 12px 30px; border-top: 1px solid #dfcba9; border-bottom: 1px solid #dfcba9; }
+.countdown { display: flex; justify-content: center; gap: clamp(12px, 5vw, 35px); margin-top: 22px; }
+.countdown div { display: grid; gap: 5px; min-width: 45px; }
+.countdown strong { font: 500 30px "Cormorant Garamond", serif; color: #85623e; }
+.countdown span { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+.rsvp-panel { padding: 36px 8px; max-width: 500px; margin: auto; }
+.button-large { margin-top: 14px; font-size: 11px; padding: 14px 20px; }
+footer { padding: 25px 0 8px; border-top: 1px solid #dfcba9; display: grid; gap: 8px; font: italic 17px "Cormorant Garamond", serif; color: var(--muted); }
+footer strong { color: #71563c; font: 500 28px "Cormorant Garamond", serif; }
+footer span { font: 10px "Montserrat", sans-serif; letter-spacing: .2em; }
+.music-control { position: fixed; right: 15px; bottom: 15px; z-index: 10; }
+.music-button { background: #fffaf2eF; border: 1px solid #d7c3a5; border-radius: 30px; color: #71563c; padding: 11px 14px; box-shadow: 0 5px 18px #654b2b18; font: 500 10px "Montserrat", sans-serif; cursor: pointer; }
+.music-button[aria-pressed="true"] { background: #735840; color: #fffaf2; }
+@media (max-width: 420px) {
+  .page { width: min(100% - 22px, 850px); padding-top: 25px; }
+  .envelope { width: min(300px, 84vw); height: 200px; }
+  .envelope-flap { height: 62%; }
+  .envelope.opened .invitation-card { height: 535px; transform: translateY(-105px); }
+  .envelope-stage.opened-stage { height: 465px; }
+  .names { font-size: 24px; }
+  .photo-large { height: 220px; }
+  .photo:not(.photo-large) { height: 145px; }
+  .button { padding: 11px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* ===== Estilo botánico dorado (inspirado en la invitación de referencia) ===== */
+:root { --sage: #b9c9a8; }
+.invitation-card { background: radial-gradient(circle at 20% 0%, #fff 0%, var(--paper) 65%); }
+.invitation-card::before, .invitation-card::after { content: ""; position: absolute; width: 46px; height: 46px; border: 0 solid var(--champagne); pointer-events: none; z-index: 2; }
+.invitation-card::before { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
+.invitation-card::after { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
+.card-inner { position: relative; padding: 6px 4px 0; }
+.card-deco { position: absolute; inset: -18px -12px; overflow: hidden; pointer-events: none; }
+.leaf { position: absolute; width: 150px; opacity: .9; }
+.leaf svg { width: 100%; display: block; }
+.leaf-top { top: 0; right: 0; }
+.leaf-bottom { bottom: 0; left: 0; transform: rotate(180deg); }
+.card-inner > :not(.card-deco) { position: relative; z-index: 1; }
+.guest { font: italic 17px "Cormorant Garamond", serif; color: var(--gold); margin: 0 0 6px; min-height: 1.2em; }
+.names { font: 400 54px/.95 "Pinyon Script", cursive; margin: 6px 0 8px; background: linear-gradient(135deg, #8a6528, #d4b06a 45%, #8a6528); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.names i { font: 400 28px "Pinyon Script", cursive; margin: 0; }
+.full-names { font-size: 9px; letter-spacing: .08em; color: var(--muted); margin: 0 auto 8px; max-width: 220px; line-height: 1.6; }
+.subtitle { font: 500 13px "Cormorant Garamond", serif; letter-spacing: .2em; margin: 6px 0 0; }
+.date-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 18px 0 2px; }
+.date-row .line { flex: 1; height: 1px; background: var(--ink); opacity: .55; }
+.date-row small { font: 500 10px "Montserrat", sans-serif; letter-spacing: .1em; }
+.date-row strong { font: 600 46px/1 "Cormorant Garamond", serif; color: var(--ink); }
+.year { font: 500 12px "Montserrat", sans-serif; letter-spacing: .3em; margin: 0 0 4px; color: var(--gold-dark); }
+.invite-copy { font-size: 14px; line-height: 1.5; margin: 12px auto 10px; }
+.button { border-radius: 999px; padding: 11px 16px; box-shadow: 0 2px 8px rgba(120,90,30,.18); }
+.button-share { background: transparent; color: #604a32; border: 1px solid var(--gold); margin: 10px 0 0 8px; cursor: pointer; }
+.button-whatsapp { background: #25d366; color: #fff; border: 0; cursor: pointer; }
+.envelope.opened .invitation-card { height: 640px; transform: translateY(-115px); }
+.envelope-stage.opened-stage { height: 590px; }
+.admin-panel { max-width: 420px; margin: 30px auto; padding: 22px 16px; background: #fffdf8; border: 1px dashed var(--gold); }
+.admin-panel h2 { font-size: 28px; }
+.admin-panel p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.admin-panel input { width: 100%; padding: 12px; margin: 6px 0; border: 1px solid var(--champagne); border-radius: 6px; font: 14px "Montserrat", sans-serif; background: #fff; }
+#toast { position: fixed; left: 50%; bottom: 70px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 12px; opacity: 0; transition: opacity .25s; z-index: 20; pointer-events: none; }
+#toast.visible { opacity: 1; }
+@media (max-width: 420px) {
+  .envelope.opened .invitation-card { height: 690px; transform: translateY(-105px); }
+  .envelope-stage.opened-stage { height: 640px; }
+  .names { font-size: 48px; }
+  .leaf { width: 120px; }
+}
+
+/* La tarjeta abierta es alta: el sobre baja para que quepa y el contenido no se tape */
+.envelope-stage.opened-stage { align-items: start; padding-top: 120px; }
+.envelope-stage.opened-stage { height: 740px; }
+@media (max-width: 420px) { .envelope-stage.opened-stage { height: 750px; } }

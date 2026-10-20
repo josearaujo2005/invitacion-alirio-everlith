@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f0e7">
+  <meta name="description" content="Invitación de matrimonio de Alirio Rangel Ochoa y Everlith Araujo Guethe. 13 de noviembre de 2026.">
+  <title>Alirio & Everlith | Nuestra boda</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alirio & Everlith | Nuestra boda">
+  <meta property="og:description" content="Estás invitado a nuestra boda el 13 de noviembre de 2026. Abre tu invitación.">
+  <!-- Cuando publiques, cambia esta URL por la de tu foto (ruta completa, https://...) -->
+  <meta property="og:image" content="assets/foto-1.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="page">
+    <p class="eyebrow top-eyebrow">UNA INVITACIÓN HECHA CON AMOR</p>
+
+    <section class="envelope-stage" id="envelopeStage" aria-label="Sobre de invitación">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Abrir invitación">
+        <div class="envelope-back"></div>
+        <article class="invitation-card" id="invitationCard">
+          <div class="card-inner">
+            <div class="card-deco" aria-hidden="true"><span class="leaf leaf-top"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="#b9c9a8" opacity=".55"><path d="M190 10C140 20 110 60 105 110c45-10 80-50 85-100z"/><path d="M150 5C110 30 90 70 95 105c35-20 55-55 55-100z"/></g><g fill="none" stroke="#a98550" stroke-width="1.3"><path d="M195 5C150 30 120 70 118 130M118 130c25-5 55-30 70-75"/><path d="M170 20C130 40 110 80 112 125"/></g><path fill="#d6bd93" d="M120 120c-25-5-45-25-50-50 28 3 48 22 50 50z"/></svg></span><span class="leaf leaf-bottom"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="#b9c9a8" opacity=".55"><path d="M190 10C140 20 110 60 105 110c45-10 80-50 85-100z"/><path d="M150 5C110 30 90 70 95 105c35-20 55-55 55-100z"/></g><g fill="none" stroke="#a98550" stroke-width="1.3"><path d="M195 5C150 30 120 70 118 130M118 130c25-5 55-30 70-75"/><path d="M170 20C130 40 110 80 112 125"/></g><path fill="#d6bd93" d="M120 120c-25-5-45-25-50-50 28 3 48 22 50 50z"/></svg></span></div>
+            <p class="guest" id="guestText"></p>
+            <p class="eyebrow">EL COMIENZO DE SIEMPRE</p>
+            <h1 class="names" aria-label="Alirio Rangel Ochoa y Everlith Araujo Guethe"><span>Alirio</span><i>&</i><span>Everlith</span></h1>
+            <p class="full-names">Alirio Rangel Ochoa y Everlith Araujo Guethe</p>
+            <p class="subtitle">NUESTRA BODA</p>
+            <div class="date-row"><span class="line"></span><small>VIERNES</small><strong>13</strong><small>NOVIEMBRE</small><span class="line"></span></div>
+            <p class="year">2026</p>
+            <p class="invite-copy">Con la bendición de Dios y el cariño de nuestras familias, queremos compartir contigo el día en que uniremos nuestras vidas.</p>
+            <p class="time" id="eventTimeText">Hora: 4:00 p. m.</p>
+            <p class="venue" id="venueText">Lugar: Hacienda Los Sueños</p>
+            <p class="address" id="addressText">Dirección de ejemplo · Valledupar, Cesar</p>
+            <div class="card-buttons">
+              <a class="button button-gold" id="mapButton" href="https://maps.google.com/?q=Valledupar%2C+Cesar%2C+Colombia" target="_blank" rel="noopener">📍 Ver ubicación</a>
+              <a class="button button-dark" id="rsvpButton" href="#" target="_blank" rel="noopener">✔ Confirmar asistencia</a>
+            </div>
+            <p class="small-note">Tu presencia hará este día aún más especial.</p>
+          </div>
+        </article>
+        <div class="envelope-front"></div>
+        <div class="envelope-flap"></div>
+        <div class="wax-seal" aria-hidden="true">A<span>&</span>E</div>
+      </div>
+    </section>
+
+    <p class="tap-hint" id="tapHint">Toca el sobre para abrir tu invitación</p>
+
+    <section class="below-content hidden" id="belowContent">
+      <div class="section-heading">
+        <p class="eyebrow">UN RECUERDO PARA COMPARTIR</p>
+        <h2>Nuestra historia</h2>
+        <p>Nos encantaría guardar este momento contigo.</p>
+      </div>
+
+      <div class="photo-grid">
+        <figure class="photo photo-large">
+          <img src="assets/foto-1.jpg" alt="Fotografía de los novios" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+          <div class="photo-placeholder"><span>♡</span><small>Agrega aquí una foto de los novios</small></div>
+        </figure>
+        <figure class="photo">
+          <img src="assets/foto-2.jpg" alt="Recuerdo de la pareja" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+          <div class="photo-placeholder"><span>♡</span><small>Un recuerdo especial</small></div>
+        </figure>
+        <figure class="photo">
+          <img src="assets/foto-3.jpg" alt="Fotografía favorita de la pareja" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+          <div class="photo-placeholder"><span>♡</span><small>Una foto favorita</small></div>
+        </figure>
+      </div>
+
+      <section class="countdown-panel">
+        <p class="eyebrow">CUENTA REGRESIVA</p>
+        <h2>Falta muy poco</h2>
+        <div class="countdown" aria-live="polite">
+          <div><strong id="days">--</strong><span>días</span></div>
+          <div><strong id="hours">--</strong><span>horas</span></div>
+          <div><strong id="minutes">--</strong><span>minutos</span></div>
+          <div><strong id="seconds">--</strong><span>segundos</span></div>
+        </div>
+      </section>
+
+      <section class="rsvp-panel">
+        <div class="ornament">✦</div>
+        <p class="eyebrow">NOS ENCANTARÍA CONTAR CONTIGO</p>
+        <h2>¿Nos acompañas?</h2>
+        <p>Por favor, confirma tu asistencia a través de WhatsApp.</p>
+        <a class="button button-dark button-large" id="rsvpButtonBottom" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+        <button class="button button-share button-large" id="shareButton" type="button">Compartir esta invitación</button>
+      </section>
+
+      <footer>
+        <p>Con amor,</p>
+        <strong>Alirio & Everlith</strong>
+        <span>13 · 11 · 2026</span>
+      </footer>
+    </section>
+
+    <!-- Panel solo para los novios: abre la página con ?admin=1 -->
+    <section class="admin-panel hidden" id="adminPanel">
+      <h2>Enviar invitaciones</h2>
+      <p>Escribe el nombre del invitado y, si quieres, su celular. Se abrirá WhatsApp con su enlace personalizado.</p>
+      <input id="adminName" type="text" placeholder="Nombre del invitado o familia" autocomplete="off">
+      <input id="adminPhone" type="tel" placeholder="Celular (opcional) ej. 3001234567" autocomplete="off">
+      <button class="button button-whatsapp button-large" id="adminSend" type="button">Enviar por WhatsApp</button>
+    </section>
+
+    <div class="music-control">
+      <button id="musicButton" class="music-button" type="button" aria-pressed="false">♫ <span>Activar música</span></button>
+      <audio id="weddingMusic" loop preload="none">
+        <source src="assets/musica.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

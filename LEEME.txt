@@ -1,0 +1,72 @@
+INVITACIÓN INTERACTIVA — ALIRIO & EVERLITH
+===========================================
+
+ARCHIVOS
+- index.html: estructura de la invitación.
+- styles.css: diseño, colores y animación del sobre.
+- script.js: apertura, cuenta regresiva, ubicación y WhatsApp.
+- assets/foto-1.jpg, foto-2.jpg, foto-3.jpg: espacios para fotos.
+- assets/musica.mp3: espacio para una canción MP3.
+
+ANTES DE PUBLICAR
+1. Abre script.js y cambia:
+   - horaTexto
+   - lugar
+   - direccion
+   - mapa
+   - whatsappConfirmaciones
+2. El número de WhatsApp debe tener indicativo de país y solo dígitos.
+   Ejemplo Colombia: 573001234567 (reemplázalo por el número real).
+3. Pon tus fotos en la carpeta assets con los nombres exactos:
+   foto-1.jpg, foto-2.jpg y foto-3.jpg.
+   Si tus fotos son PNG, cambia también el nombre en index.html.
+4. Agrega un archivo de música llamado assets/musica.mp3.
+   Usa música propia, con licencia o autorizada para compartir.
+5. Revisa que la fecha y la hora estén correctas. La fecha inicial es
+   13 de noviembre de 2026 a las 4:00 p. m. hora de Colombia.
+
+PROBAR EN TU COMPUTADOR
+1. Descomprime el ZIP.
+2. Abre la carpeta.
+3. Haz doble clic en index.html para abrirlo en Chrome, Edge o Firefox.
+4. Toca el sobre para abrir la invitación.
+5. Prueba los botones de ubicación, WhatsApp y música.
+   El enlace de WhatsApp y la ubicación usan datos de ejemplo hasta que
+   los cambies. La música requiere que agregues el MP3.
+
+PUBLICAR GRATIS CON GITHUB PAGES
+1. Entra a https://github.com e inicia sesión.
+2. Crea un repositorio nuevo, por ejemplo: invitacion-alirio-everlith.
+3. Sube index.html, styles.css, script.js y la carpeta assets completa.
+4. En el repositorio entra a Settings > Pages.
+5. En "Build and deployment", elige "Deploy from a branch".
+6. Selecciona la rama main y la carpeta /(root), luego guarda.
+7. Espera unos minutos. GitHub mostrará una dirección web parecida a:
+   https://TU-USUARIO.github.io/invitacion-alirio-everlith/
+8. Abre ese enlace en tu teléfono y prueba todo antes de enviarlo.
+
+ENVIAR POR WHATSAPP
+1. Copia el enlace público.
+2. Pégalo en el chat de cada invitado y envíalo.
+3. La persona toca el enlace, abre el sobre y ve la invitación.
+No envíes solamente index.html: el enlace publicado permite cargar todos
+los archivos, estilos, fotos y música.
+
+NOTAS
+- Los datos del lugar, dirección y teléfono son de ejemplo.
+- La música no inicia automáticamente: el invitado debe tocar "Activar música".
+- GitHub Pages publica el sitio de forma pública; no pongas datos privados.
+- El botón RSVP abre WhatsApp con un mensaje preparado. La confirmación
+  no se guarda automáticamente en una base de datos: llega al WhatsApp
+  que configures.
+
+NOVEDADES: COMPARTIR POR WHATSAPP
+- Botón "Compartir esta invitación" al final de la página (en el celular abre
+  el menú de compartir; en el computador abre WhatsApp Web).
+- Enlace personalizado: tuweb.com/?invitado=Familia%20Perez muestra
+  "Para Familia Perez" y la confirmación sale con su nombre.
+- Panel para los novios: abre tuweb.com/?admin=1, escribe el nombre (y el
+  celular si quieres) y se abre WhatsApp con el enlace de esa persona.
+- En script.js, pega tu enlace público en CONFIG.urlPublica.
+- En index.html, cambia la URL de og:image por la ruta completa de tu foto
+  para que WhatsApp muestre una vista previa bonita al enviar el enlace.
