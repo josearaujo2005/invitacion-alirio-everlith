@@ -2,10 +2,10 @@
 const CONFIG = {
   nombres: "Alirio Rangel Ochoa y Everlith Araujo Guethe",
   fechaISO: "2026-11-13T16:00:00-05:00",
-  horaTexto: "4:00 p. m.",
-  lugar: "Hacienda Los Sueños",
+  horaTexto: "8:00 p. m.",
+  lugar: "villa taxi , mza p casa 4 ",
   direccion: "Dirección de ejemplo · Valledupar, Cesar",
-  mapa: "https://maps.google.com/?q=Valledupar%2C+Cesar%2C+Colombia",
+  mapa: "https://www.google.com/maps/place/10%C2%B027'08.9%22N+73%C2%B016'38.9%22W/@10.452474,-73.2800409,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.452474!4d-73.277466?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
   // Cambia este número por el WhatsApp de quien recibirá las confirmaciones.
   whatsappConfirmaciones: "573226407225",
   // Pega aquí el enlace público cuando publiques (GitHub Pages, Netlify...).
