@@ -1,9 +1,9 @@
-// ===== PERSONALIZA AQUÍ LOS DATOS DEL EVENTO =====
+﻿// ===== PERSONALIZA AQUÍ LOS DATOS DEL EVENTO =====
 const CONFIG = {
   nombres: "Alirio Rangel Ochoa y Everlith Araujo Guethe",
   fechaISO: "2026-11-13T16:00:00-05:00",
   horaTexto: "8:00 p. m.",
-  lugar: "villa taxi , mza p casa 4 ",
+  lugar: "Restaurante Callo Daza",
   direccion: "Dirección de ejemplo · Valledupar, Cesar",
   mapa: "https://maps.app.goo.gl/gTLmwdQswqRuFr5D9?g_st=iw",
   // Cambia este número por el WhatsApp de quien recibirá las confirmaciones.
@@ -154,3 +154,4 @@ document.getElementById("adminSend").addEventListener("click", () => {
   document.getElementById("adminPhone").value = "";
   document.getElementById("adminName").focus();
 });
+
